@@ -14,6 +14,7 @@ import {
   Trophy,
 } from "lucide-react";
 import Link from "next/link";
+import ContactSection from "@/components/ContactSection";
 
 export default function Home() {
   return (
@@ -24,7 +25,7 @@ export default function Home() {
         <Hero />
       </section>
 
-      <section className="my-80 flex flex-col items-center" id="skills">
+      <section className="py-48 flex flex-col items-center" id="skills">
         <div className="flex flex-col items-center space-y-2">
           <h2 className="text-lg text-[#00ceb8] font-semibold">Skills</h2>
           <p className="w-full text-center text-3xl text-white font-bold">
@@ -106,7 +107,7 @@ export default function Home() {
       </section>
 
       <section
-        className="my-80 flex flex-col items-center"
+        className="py-48 flex flex-col items-center"
         id="continued-skills"
       >
         <div className="flex flex-col items-center space-y-2">
@@ -168,7 +169,7 @@ export default function Home() {
         </Link>
       </section>
 
-      <section className="my-80 flex flex-col items-center" id="interests">
+      <section className="py-48 flex flex-col items-center" id="interests">
         <div className="flex flex-col items-center space-y-2">
           <h2 className="text-lg text-[#00ceb8] font-semibold">Interests</h2>
           <p className="w-full text-center text-3xl text-white font-bold">
@@ -242,79 +243,7 @@ export default function Home() {
         </Link>
       </section>
 
-      <section className="my-80 flex flex-col items-center" id="interests">
-        <div className="flex flex-col items-center space-y-2">
-          <h2 className="text-lg text-[#00ceb8] font-semibold">Interests</h2>
-          <p className="w-full text-center text-3xl text-white font-bold">
-            What I&apos;d love to work on
-          </p>
-          <p className="w-1/2 text-center text-gray-300">
-            Sleeper is the best fantasy sports app on the market, and the one
-            I&apos;ve been using to manage all my leagues for several years now
-          </p>
-        </div>
-        <div className="w-full mt-4 gap-8 flex justify-between text-start">
-          <div className="h-[200px] w-[375px] flex space-x-4">
-            <div className="h-full flex flex-col justify-start">
-              <div className="h-[50px] w-[50px] flex justify-center items-center rounded-lg bg-gray-800">
-                <Scale size={25} color="#00ceb8" />
-              </div>
-            </div>
-
-            <div className="space-y-2">
-              <p className="text-xl text-gray-300 font-bold">Trade Analyzer</p>
-              <p className="text-[#b4bcd0]">
-                Many websites and third-party apps in the marketplace analyze
-                your draft, evaluate trades, and provide sit &apos;em/start
-                &apos;em advice. Build these in-house!
-              </p>
-            </div>
-          </div>
-          <div className="h-[200px] w-[375px] flex space-x-4">
-            <div className="h-full flex flex-col justify-start">
-              <div className="h-[50px] w-[50px] flex justify-center items-center rounded-lg bg-gray-800">
-                <Medal size={25} color="#00ceb8" />
-              </div>
-            </div>
-
-            <div className="space-y-2">
-              <p className="text-xl text-gray-300 font-bold">
-                Historical League Data
-              </p>
-              <p className="text-[#b4bcd0]">
-                In-season metrics are already great, but it&apos;d be awesome to
-                keep track of all-time records, awards, and rankings over the
-                course of a league&apos;s history throughout the years
-              </p>
-            </div>
-          </div>
-          <div className="h-[200px] w-[375px] flex space-x-4">
-            <div className="h-full flex flex-col justify-start">
-              <div className="h-[50px] w-[50px] flex justify-center items-center rounded-lg bg-gray-800">
-                <Bot size={25} color="#00ceb8" />
-              </div>
-            </div>
-
-            <div className="space-y-2">
-              <p className="text-xl text-gray-300 font-bold">
-                Start &apos;em/sit &apos;em assistant
-              </p>
-              <p className="text-[#b4bcd0]">
-                A tool I&apos;d like to work on is a bot that alerts managers if
-                they have a player on their bench projected to score more points
-                than one of their starters, perhaps even making the substitution
-              </p>
-            </div>
-          </div>
-        </div>
-        <Link
-          className="mt-5 px-5 py-2 flex items-center space-x-1 rounded-md bg-slate-800 hover:bg-slate-700 transition-color text-sm text-white font-medium hover:cursor-pointer"
-          href="#skills"
-        >
-          <p>Next</p>
-          <ArrowDown color="white" size={15} />
-        </Link>
-      </section>
+      <ContactSection />
     </main>
   );
 }
