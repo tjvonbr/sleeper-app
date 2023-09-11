@@ -2,13 +2,14 @@
 
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
-import { motion } from "framer-motion";
 
 export default function Hero() {
   return (
-    <div className="flex flex-col items-center">
-      <h1 className="text-5xl font-bold">Sleeper 🤝 Trevor</h1>
-      <p className="text-lg text-gray-300">
+    <div className="px-5 flex flex-col items-center">
+      <h1 className="text-center text-5xl text-white font-bold">
+        Sleeper 🤝 Trevor
+      </h1>
+      <p className="text-center text-lg text-gray-300">
         An overengineered application for a developer role at Sleeper!
       </p>
       <Link
