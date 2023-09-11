@@ -25,18 +25,8 @@ export default function ContactSection() {
   const [selectedUser, setSelectedUser] = React.useState<User | null>(null);
   const [assignedUser, setAssignedUser] = React.useState<User | null>(null);
 
-  function handleSelectUser() {
-    setSelectedUser({
-      name: "Trevor Von Bruenchenhein",
-      role: "DEV",
-      city: "PHX",
-      techStack: "Tech stack: TypeScript, Next.js, React, Prisma",
-      experience: "4",
-    });
-  }
-
   function handleAssignUser() {
-    if (selectedUser) {
+    if (selectedUser && !assignedUser) {
       setAssignedUser({
         name: selectedUser.name,
         role: selectedUser.role,
@@ -52,21 +42,36 @@ export default function ContactSection() {
         (user) => user.name !== selectedUser!.name
       );
       setBench(newBench);
+    } else if (!selectedUser && assignedUser) {
+      setSelectedUser(assignedUser);
+    } else if (selectedUser && assignedUser) {
+      setSelectedUser(null);
+    } else {
+      return;
     }
   }
 
   function handleBench() {
+    // Move player back to bench from roster slot
     if (assignedUser && selectedUser) {
       setBench([assignedUser]);
       setAssignedUser(null);
       setSelectedUser(null);
-    } else if (assignedUser) {
-      return;
+      // Un-do your selection
     } else if (selectedUser) {
       setSelectedUser(null);
+      // Select user if no selection already
     } else if (!selectedUser) {
       setSelectedUser(bench[0]);
+    } else {
+      return;
     }
+  }
+
+  function emailTrevor() {
+    window.open(
+      "mailto:tjvonbr@gmail.com?subject=Let's schedule an interview!"
+    );
   }
 
   return (
@@ -83,7 +88,7 @@ export default function ContactSection() {
         </p>
       </div>
 
-      <div className="flex flex-col items-start">
+      <div className="w-[400px] flex flex-col items-start">
         <div className="mt-8">
           <h3 className="text-lg text-white font-bold">Starters</h3>
           <p className="text-sm text-gray-400">
@@ -91,8 +96,10 @@ export default function ContactSection() {
           </p>
           <div className="mt-8 flex items-center space-x-6">
             <button
-              className="h-10 w-[60px] flex items-center justify-center bg-slate-800 hover:bg-slate-700 transition-colors rounded-md text-xs text-[#00ceb8] font-semibold"
-              onClick={assignedUser ? handleSelectUser : handleAssignUser}
+              className={`h-10 w-[60px] flex items-center justify-center bg-slate-800 hover:bg-slate-700 transition-colors rounded-md text-xs text-[#00ceb8] font-semibold ${
+                selectedUser && !assignedUser ? "animate-shake" : ""
+              }`}
+              onClick={handleAssignUser}
             >
               DEV
             </button>
@@ -113,7 +120,9 @@ export default function ContactSection() {
           </p>
           <div className="mt-4 flex items-center space-x-6">
             <button
-              className="h-10 w-[60px] flex items-center justify-center bg-slate-800 hover:bg-slate-700 transition-colors rounded-md text-xs text-slate-300 font-semibold"
+              className={`h-10 w-[60px] flex items-center justify-center bg-slate-800 hover:bg-slate-700 transition-colors rounded-md text-xs text-slate-300 font-semibold ${
+                selectedUser && assignedUser ? `animate-shake` : ""
+              }`}
               onClick={handleBench}
             >
               BN
@@ -121,10 +130,23 @@ export default function ContactSection() {
             {bench.length > 0 ? (
               <UserData user={bench[0]} />
             ) : (
-              <p className="text-xs text-gray-400">No bench player</p>
+              <p className="text-xs text-gray-400">
+                You have no bench players right now
+              </p>
             )}
           </div>
         </div>
+        {assignedUser && (
+          <div className="w-full mt-8 flex flex-col items-center space-y-4 text-white">
+            <p className="font-semibold">Smart move! Now... last thing</p>
+            <button
+              className="h-10 w-full flex justify-center items-center bg-teal-400 hover:bg-teal-500 text-[#181c28] transition-colors rounded-md text-sm font-medium"
+              onClick={emailTrevor}
+            >
+              Email Trevor to setup an interview!
+            </button>
+          </div>
+        )}
       </div>
     </section>
   );

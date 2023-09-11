@@ -36,11 +36,11 @@ export default function Home() {
             see you soon to see how we can help scale your business
           </p>
           <Link
-            className="mt-5 px-5 py-2 flex items-center space-x-1 rounded-md bg-[#00ceb8] hover:bg-[#00ceb8]/90 transition-colors text-sm text-white font-medium hover:cursor-pointer"
+            className="mt-5 px-5 py-2 flex items-center space-x-1 rounded-md bg-teal-400 hover:bg-teal-500 transition-colors text-sm text-[#181c28] font-medium hover:cursor-pointer"
             href="#continued-skills"
           >
             <p>Download resume</p>
-            <Download color="white" size={15} />
+            <Download color="#181c28" size={15} />
           </Link>
         </div>
 
@@ -98,7 +98,7 @@ export default function Home() {
           </a>
         </div>
         <Link
-          className="mt-5 px-5 py-2 flex items-center space-x-1 rounded-md bg-slate-800 hover:bg-slate-700 transition-color text-sm text-white font-medium hover:cursor-pointer"
+          className="mt-5 px-5 py-2 flex items-center space-x-1 rounded-md bg-slate-800 hover:bg-slate-700 transition-colors text-sm text-white font-medium hover:cursor-pointer"
           href="#continued-skills"
         >
           <p>Next</p>
@@ -161,7 +161,7 @@ export default function Home() {
         </div>
 
         <Link
-          className="mt-5 px-5 py-2 flex items-center space-x-1 rounded-md bg-slate-800 hover:bg-slate-700 transition-color text-sm text-white font-medium hover:cursor-pointer"
+          className="mt-5 px-5 py-2 flex items-center space-x-1 rounded-md bg-slate-800 hover:bg-slate-700 transition-colors text-sm text-white font-medium hover:cursor-pointer"
           href="#interests"
         >
           <p>Next</p>
@@ -235,7 +235,7 @@ export default function Home() {
           </div>
         </div>
         <Link
-          className="mt-5 px-5 py-2 flex items-center space-x-1 rounded-md bg-slate-800 hover:bg-slate-700 transition-color text-sm text-white font-medium hover:cursor-pointer"
+          className="mt-5 px-5 py-2 flex items-center space-x-1 rounded-md bg-slate-800 hover:bg-slate-700 transition-colors text-sm text-white font-medium hover:cursor-pointer"
           href="#skills"
         >
           <p>Next</p>
