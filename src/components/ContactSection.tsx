@@ -75,13 +75,13 @@ export default function ContactSection() {
   }
 
   return (
-    <section className="my-80 flex flex-col items-center" id="interests">
+    <section className="my-80 flex flex-col items-center" id="contact">
       <div className="flex flex-col items-center space-y-2">
         <h2 className="text-lg text-[#00ceb8] font-semibold">Contact</h2>
         <p className="w-full text-center text-3xl text-white font-bold">
           There&apos;s one thing left to do
         </p>
-        <p className="w-1/2 text-center text-gray-300">
+        <p className="w-3/4 md:w-1/2 text-center text-gray-300">
           A tool I&apos;d like to work on is a bot that alerts managers if they
           have a player on their bench projected to score more points than one
           of their starters, perhaps even making the substitution
@@ -92,7 +92,7 @@ export default function ContactSection() {
         <div className="mt-8">
           <h3 className="text-lg text-white font-bold">Starters</h3>
           <p className="text-sm text-gray-400">
-            Click on position buttons to update your lineup
+            Click on bench player to update your lineup
           </p>
           <div className="mt-8 flex items-center space-x-6">
             <button
