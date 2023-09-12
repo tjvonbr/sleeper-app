@@ -95,7 +95,13 @@ export default function ContactSection() {
           <p className="text-sm text-gray-400">
             Click on bench player to update your lineup
           </p>
-          <div className="mt-8 flex items-center space-x-6">
+          <div
+            className={`box-border border-2 mt-4 p-2 flex items-center space-x-6 rounded-md ${
+              selectedUser && assignedUser
+                ? "border-[#ffae58]"
+                : "border-[#181c28]"
+            }`}
+          >
             <button
               className={`h-10 w-[60px] flex items-center justify-center bg-slate-800 hover:bg-slate-700 transition-colors rounded-md text-xs text-[#00ceb8] font-semibold ${
                 selectedUser && !assignedUser ? "animate-shake" : ""
@@ -119,9 +125,15 @@ export default function ContactSection() {
           <p className="text-sm text-gray-400">
             Click on a player to add to your engineering lineup
           </p>
-          <div className="mt-4 flex items-center space-x-6">
+          <div
+            className={`box-border border-2 mt-4 p-2 flex items-center space-x-6 rounded-md ${
+              selectedUser && bench.length > 0
+                ? "border-[#ffae58]"
+                : "border-[#181c28]"
+            }`}
+          >
             <button
-              className={`h-10 w-[60px] flex items-center justify-center bg-slate-800 hover:bg-slate-700 transition-colors rounded-md text-xs text-slate-300 font-semibold ${
+              className={`h-10 w-[60px] flex items-center justify-center bg-[#a3bbd3] hover:bg-[#a3bbd3]/90 transition-colors rounded-md text-xs text-[#022047] font-semibold ${
                 selectedUser && assignedUser ? `animate-shake` : ""
               }`}
               onClick={handleBench}
