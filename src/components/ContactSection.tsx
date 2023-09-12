@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Section from "./ui/Section";
 
 interface User {
   name: string;
@@ -75,7 +76,7 @@ export default function ContactSection() {
   }
 
   return (
-    <section className="my-80 flex flex-col items-center" id="contact">
+    <Section className="my-24 md:my-48 flex flex-col items-center" id="contact">
       <div className="flex flex-col items-center space-y-2">
         <h2 className="text-lg text-[#00ceb8] font-semibold">Contact</h2>
         <p className="w-full text-center text-3xl text-white font-bold">
@@ -148,7 +149,7 @@ export default function ContactSection() {
           </div>
         )}
       </div>
-    </section>
+    </Section>
   );
 }
 
