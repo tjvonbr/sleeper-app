@@ -1,7 +1,6 @@
 "use client";
 
 import { Icons } from "./Icons";
-import Link from "next/link";
 import { motion } from "framer-motion";
 import Section from "./ui/Section";
 import { ArrowDown, Download } from "lucide-react";
@@ -21,13 +20,14 @@ export default function SkillsSection() {
           see you soon to see how we can help scale your business
         </p>
       </div>
-      <Link
+      <a
         className="mt-5 px-5 py-2 flex items-center space-x-1 rounded-md bg-teal-400 hover:bg-teal-500 transition-colors text-sm text-[#181c28] font-medium hover:cursor-pointer"
-        href="#continued-skills"
+        href="/vonbruenchenhein.pdf"
+        download
       >
         <p>Download resume</p>
         <Download color="#181c28" size={15} />
-      </Link>
+      </a>
 
       <div className="mt-4 flex flex-col md:flex-row text-center">
         {skills.map((skill: Skill, idx: number) => {
