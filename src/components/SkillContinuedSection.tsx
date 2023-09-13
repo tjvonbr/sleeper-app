@@ -1,8 +1,11 @@
 "use client";
 
+import { ArrowDown, Plus } from "lucide-react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import Section from "./ui/Section";
-import { ArrowDown, Plus } from "lucide-react";
+import sleeperAppScreenshot from "../../public/Screenshot 2023-09-13 at 1.16.06 AM.png";
+import Link from "next/link";
 
 export default function SkillsContinuedSection() {
   return (
@@ -31,6 +34,18 @@ export default function SkillsContinuedSection() {
           <h2 className="text-2xl text-center text-white font-bold">
             Sleeper Keeper Calculator
           </h2>
+          <Link
+            className="flex flex-col items-center justify-center rounded-md"
+            href="https://keepercalculator.com"
+          >
+            <Image
+              src={sleeperAppScreenshot}
+              width={500}
+              height={500}
+              alt="Sleeper app screenshot"
+              className="rounded-md"
+            />
+          </Link>
         </div>
         <div className="w-[90%] flex flex-col items-center">
           <h2 className="text-2xl text-center text-white font-bold">
