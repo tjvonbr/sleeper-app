@@ -30,8 +30,8 @@ export default function SkillsContinuedSection() {
         viewport={{ once: true }}
         transition={{ delay: 0.25 }}
       >
-        <div className="w-[90%] flex flex-col gap-4">
-          <h2 className="text-2xl text-center text-white font-bold">
+        <div className="w-[90%] flex flex-col space-y-4">
+          <h2 className="mt-8 text-2xl text-center text-white font-bold">
             Sleeper Keeper Calculator
           </h2>
           <Link
@@ -47,27 +47,33 @@ export default function SkillsContinuedSection() {
             />
           </Link>
         </div>
-        <div className="w-[90%] flex flex-col items-center">
+        <div className="mt-8 w-[90%] flex flex-col items-center spacey-y-4">
           <h2 className="text-2xl text-center text-white font-bold">
             Features
           </h2>
           <ul className="w-3/4 mt-2 flex flex-col items-center space-y-4 text-left">
             <li className="flex items-center space-x-1 text-gray-300">
-              <Plus color="#00ceb8" size={25} strokeWidth={5} />
+              <div className="flex flex-col items-center justify-center">
+                <Plus color="#00ceb8" size={20} strokeWidth={2.5} />
+              </div>
               <p>
                 Fetches and evaluates team owners&apos; draft data directly from
                 Sleeper API
               </p>
             </li>
             <li className="flex items-center space-x-1 text-gray-300">
-              <Plus color="#00ceb8" size={25} strokeWidth={5} />
+              <div className="flex flex-col items-center justify-center">
+                <Plus color="#00ceb8" size={20} strokeWidth={2.5} />
+              </div>
               <p>
                 Scrapes average draft position (ADP) data from FantasyPros and
                 stores it as a daily snapshot in a PostgreSQL database
               </p>
             </li>
             <li className="flex items-center space-x-1 text-gray-300">
-              <Plus color="#00ceb8" size={25} strokeWidth={5} />
+              <div className="flex flex-col items-center justify-center">
+                <Plus color="#00ceb8" size={20} strokeWidth={2.5} />
+              </div>
               <p>
                 Scores and ranks Sleeper team owners&apos; keeper and draft
                 selections based on their draft pick location and ADP day of the
